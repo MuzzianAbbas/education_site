@@ -1,0 +1,26 @@
+.about{
+    display: flex;
+    margin: 100px auto;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.about-left{
+    flex-basis: 40%;
+    position: relative;
+}
+.about-right{
+    flex-basis: 55%;
+}
+.ab-img{
+    width: 100%;
+    border-radius: 15px;
+}
+.play{
+    position: absolute;
+    width: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

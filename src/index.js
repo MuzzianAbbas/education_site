@@ -9,6 +9,7 @@ import Titles from './components/titles';
 import About from './components/about';
 import Gallery from './components/gallery';
 import Testimons from './components/testimonials';
+import Contact from './components/contact';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,8 +22,10 @@ root.render(
       <About/>
       <Titles subTitle='Our campus photos' title='GALLERY'/>
       <Gallery/>
-      <Titles subTitle="What Students say" title="TESTIMONIALS"/>
+      <Titles subTitle="What Students Say" title="TESTIMONIALS"/>
       <Testimons/>
+      <Titles subTitle='Get in touch' title='contact us'/>
+      <Contact/>
     </div>
   </React.StrictMode>
 );

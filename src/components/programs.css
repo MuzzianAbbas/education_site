@@ -50,3 +50,14 @@
 .program:hover img {
     transform: scale(1.1); /* optional: zoom image */
 }
+
+
+/* =================Mobile view============= */
+@media(max-width:500px){
+    .programs{
+    flex-direction: column;
+}
+.program{
+    padding: 10px;
+}
+}

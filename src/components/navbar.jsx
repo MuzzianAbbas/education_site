@@ -1,30 +1,27 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import './navbar.css';
 import logo from './asssets/logo.png' ;
+import menu_icon from './asssets/menu-icon.png'
 
-class Navbar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { sticky: false };
-  }
+const Navbar =() => {
+ const [sticky, setSticky]=useState(false); 
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
+ useEffect(()=>{
+    window.addEventListener('scroll', ()=>{
+      window.scrollY> 50? setSticky(true): setSticky(false); 
+    })
+ },[]); 
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
+ const [Mobilemenu, setMobilemenu]=useState(false); 
+ const togglemenu = ()=>{
+  Mobilemenu? setMobilemenu(false): setMobilemenu(true); 
+ }
 
-  handleScroll = () => {
-    this.setState({ sticky: window.scrollY > 50 });
-  };
 
-  render() {
     return (
-      <nav className={`container ${this.state.sticky ? 'dark-nav' : ''}`}>
-        <img src={logo} alt="logo here" className="logo" />
-        <ul>
+      <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
+        <h2 className="logo">UOS.com</h2>
+        <ul className={Mobilemenu ?'':'hide-mobile-menu'}>
           <li>Home</li>
           <li>Program</li>
           <li>About us</li>
@@ -32,9 +29,9 @@ class Navbar extends Component {
           <li>Testimonials</li>
           <li><button className="btn">Contact us</button></li>
         </ul>
+        <img className='menu_icon' src={menu_icon} alt=""  onClick={togglemenu}/>
       </nav>
     );
   }
-}
 
 export default Navbar;

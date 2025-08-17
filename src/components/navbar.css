@@ -13,9 +13,7 @@ nav{
 
 .logo{
     background: transparent;
-    width: 230px;
-    height: 70px;
-    border-radius: 6%;
+    color: white;
 }
 
 nav ul li{
@@ -32,4 +30,51 @@ nav ul li{
 .dark-nav{
     background-color: #212Ea0;
     transition: 0.5s;
+}
+.menu_icon{
+    display: none;
+}
+
+/* ==============media query=============== */
+@media(max-width:1005px){
+  nav ul li{
+    margin: 11px 10px;
+  }
+}
+
+@media(max-width:870px){
+  nav.container{
+    padding: 15px 20px;
+  }
+
+  nav ul{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #212Ea0;
+    z-index: -1;
+    width: 200px;
+    padding-top: 70px;
+    transition: 0.5s;
+  }
+
+  nav ul li{
+    display: block;
+    margin: 25px 40px ;
+  }
+  .menu_icon{
+    display: block;
+    width: 30px ;
+    cursor: pointer;
+  }
+.hide-mobile-menu{
+    right: -200px;
+  }
+
+  .logo{
+    background: transparent;
+    color: white;
+}
+
 }
